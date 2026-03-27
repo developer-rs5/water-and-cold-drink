@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products | Water & Cold Drink — Sikar</title>
-<meta name="description" content="Packaged water bottles, bulk jars, Pepsi, Sprite, 7UP, Thums Up and more — always in stock in Sikar.">
+<title>Contact | Water & Cold Drink — Sikar</title>
+<meta name="description" content="Contact Sikar Water Distribution. Call or WhatsApp 24/7 for water and cold drink orders.">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -63,62 +63,50 @@ section{padding:100px 0;}
 .page-hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--cyan),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .page-hero p{color:var(--text-dim);font-size:1.1rem;max-width:600px;margin:0 auto;line-height:1.85;}
 
-/* FILTER TABS */
-.filter-tabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
-.ftab{background:rgba(0,212,255,.07);border:1px solid var(--border);border-radius:40px;padding:10px 24px;font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;color:var(--text-dim);cursor:pointer;transition:all .3s;}
-.ftab:hover,.ftab.active{background:rgba(0,212,255,.18);border-color:var(--border-glow);color:var(--cyan);}
+/* CONTACT CARDS */
+.contact-main{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:26px;}
+.contact-card{background:var(--card-bg);border:1px solid var(--border);border-radius:26px;padding:44px 38px;text-align:center;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;cursor:none;}
+.contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:topLine 3s ease-in-out infinite;}
+@keyframes topLine{0%,100%{opacity:.4}50%{opacity:1}}
+.contact-card:hover{border-color:var(--border-glow);transform:translateY(-8px);}
+.contact-icon{width:76px;height:76px;border-radius:22px;background:linear-gradient(135deg,rgba(0,212,255,.2),rgba(0,153,204,.08));border:1px solid rgba(0,212,255,.3);display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--cyan);margin:0 auto 24px;animation:iconFloat 4s ease-in-out infinite;}
+@keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.contact-card:nth-child(2) .contact-icon{animation-delay:.7s;}
+.contact-card-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:10px;}
+.contact-card-sub{color:var(--text-dim);font-size:.9rem;margin-bottom:24px;line-height:1.7;}
+.contact-nums{display:flex;flex-direction:column;gap:12px;}
+.cnum{display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(0,212,255,.07);border:1px solid var(--border);padding:14px 24px;border-radius:60px;font-weight:700;font-size:1.1rem;color:#fff;text-decoration:none;transition:all .3s;cursor:none;}
+.cnum i{color:var(--cyan);}
+.cnum:hover{border-color:var(--border-glow);background:rgba(0,212,255,.14);transform:scale(1.03);}
+.wa-card{background:rgba(10,40,20,.6);border:1px solid rgba(37,211,102,.25);border-radius:26px;padding:44px 38px;text-align:center;transition:border-color .3s,transform .3s;cursor:none;}
+.wa-card:hover{border-color:rgba(37,211,102,.5);transform:translateY(-8px);}
+.wa-icon{width:76px;height:76px;border-radius:22px;background:linear-gradient(135deg,rgba(37,211,102,.2),rgba(18,140,70,.08));border:1px solid rgba(37,211,102,.3);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#25D366;margin:0 auto 24px;animation:iconFloat 4s 1.4s ease-in-out infinite;}
+.wa-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:10px;}
+.wa-sub{color:var(--text-dim);font-size:.9rem;margin-bottom:24px;line-height:1.7;}
+.wa-btn-big{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#25D366,#128c46);color:#fff;padding:16px 44px;border-radius:60px;font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;text-decoration:none;cursor:none;animation:waPulse 3s ease-in-out infinite;transition:transform .2s;}
+@keyframes waPulse{0%,100%{box-shadow:0 0 20px rgba(37,211,102,.35)}50%{box-shadow:0 0 48px rgba(37,211,102,.75)}}
+.wa-btn-big:hover{animation:none;transform:scale(1.05);box-shadow:0 0 60px rgba(37,211,102,.8);}
 
-/* PRODUCTS GRID */
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
-.prod-card{background:var(--card-bg);border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:border-color .3s,transform .35s,box-shadow .35s;cursor:none;}
-.prod-card:hover{border-color:var(--border-glow);transform:translateY(-10px);box-shadow:0 28px 60px -18px rgba(0,212,255,.22);}
-.prod-img{height:230px;overflow:hidden;position:relative;}
-.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-.prod-card:hover .prod-img img{transform:scale(1.08);}
-.prod-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(transparent,var(--card-bg));pointer-events:none;}
-.prod-badge{position:absolute;top:14px;right:14px;z-index:2;background:rgba(0,212,255,.14);border:1px solid var(--border-glow);backdrop-filter:blur(8px);padding:5px 14px;border-radius:20px;font-size:.73rem;font-weight:600;color:var(--cyan);animation:badgePulse 3s ease-in-out infinite;}
-@keyframes badgePulse{0%,100%{box-shadow:none}50%{box-shadow:0 0 14px rgba(0,212,255,.45)}}
-.prod-body{padding:22px 24px 28px;}
-.prod-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px;}
-.prod-desc{color:var(--text-dim);font-size:.88rem;line-height:1.75;}
-.prod-sizes{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
-.psize{background:rgba(0,212,255,.08);border:1px solid var(--border);padding:4px 12px;border-radius:20px;font-size:.78rem;font-weight:600;color:var(--cyan);}
-.prod-cta{display:inline-flex;align-items:center;gap:6px;color:var(--cyan);font-size:.85rem;font-weight:600;margin-top:14px;text-decoration:none;transition:gap .25s;cursor:none;}
-.prod-cta:hover{gap:10px;}
+/* INFO GRID */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.info-card{background:var(--card-bg);border:1px solid var(--border);border-radius:22px;padding:32px 26px;transition:border-color .3s,transform .3s;cursor:none;}
+.info-card:hover{border-color:var(--border-glow);transform:translateY(-6px);}
+.info-icon{font-size:1.8rem;color:var(--cyan);margin-bottom:16px;animation:iconFloat 4s ease-in-out infinite;}
+.info-card:nth-child(2) .info-icon{animation-delay:.6s}
+.info-card:nth-child(3) .info-icon{animation-delay:1.2s}
+.info-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:10px;}
+.info-text{color:var(--text-dim);font-size:.88rem;line-height:1.75;}
 
-/* BRANDS SECTION */
-.brands-sec{background:var(--night2);}
-.brands-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;}
-.brand-chip{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:22px 18px;text-align:center;transition:border-color .3s,transform .3s;cursor:none;}
-.brand-chip:hover{border-color:var(--border-glow);transform:translateY(-6px);}
-.brand-icon{font-size:2.2rem;margin-bottom:10px;animation:iconFloat 4s ease-in-out infinite;}
-.brand-chip:nth-child(2) .brand-icon{animation-delay:.3s}
-.brand-chip:nth-child(3) .brand-icon{animation-delay:.6s}
-.brand-chip:nth-child(4) .brand-icon{animation-delay:.9s}
-.brand-chip:nth-child(5) .brand-icon{animation-delay:1.2s}
-.brand-chip:nth-child(6) .brand-icon{animation-delay:1.5s}
-@keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.brand-name{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:#fff;}
-
-/* STOCK NUMBERS — NO animation on numbers */
-.stock-sec{background:var(--night);}
-.stock-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-.stock-card{background:var(--card-bg);border:1px solid var(--border);border-radius:22px;padding:32px 24px;text-align:center;transition:border-color .3s,transform .3s;}
-.stock-card:hover{border-color:var(--border-glow);transform:translateY(-6px);}
-.stock-val{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;color:var(--cyan);display:block;line-height:1;margin-bottom:8px;}
-.stock-lab{color:var(--text-dim);font-size:.88rem;line-height:1.6;}
-
-/* CTA */
-.cta-sec{background:var(--night2);}
-.cta-box{background:rgba(12,31,53,.85);border:1px solid var(--border);border-radius:40px;padding:70px 60px;text-align:center;position:relative;overflow:hidden;}
-.cta-box::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.06),transparent 70%);transform:translate(-50%,-50%);animation:ctaGlow 6s ease-in-out infinite;}
-@keyframes ctaGlow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}50%{transform:translate(-50%,-50%) scale(1.3);opacity:1}}
-.cta-h{font-family:'Syne',sans-serif;font-size:2.3rem;font-weight:800;color:#fff;margin-bottom:14px;position:relative;z-index:1;}
-.cta-sub{color:var(--text-dim);font-size:1rem;max-width:520px;margin:0 auto 44px;position:relative;z-index:1;line-height:1.8;}
-.cta-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
-.cphone{display:flex;align-items:center;gap:10px;background:rgba(0,212,255,.07);border:1px solid var(--border);padding:13px 28px;border-radius:60px;font-family:'Syne',sans-serif;font-weight:600;color:#fff;text-decoration:none;font-size:.95rem;transition:all .3s;cursor:none;}
-.cphone i{color:var(--cyan);}
-.cphone:hover{border-color:var(--border-glow);background:rgba(0,212,255,.13);transform:translateY(-3px);}
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:16px;}
+.faq-item{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:border-color .3s;}
+.faq-item.open{border-color:var(--border-glow);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;cursor:pointer;gap:16px;}
+.faq-q-text{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;}
+.faq-arrow{color:var(--cyan);font-size:1rem;transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{color:var(--text-dim);font-size:.9rem;line-height:1.8;padding:0 26px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:200px;padding:0 26px 22px;}
 
 footer{padding:70px 60px 40px;border-top:1px solid var(--border);position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:scanLine 6s linear infinite;}
@@ -136,8 +124,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .fcredit{color:var(--text-dim);font-size:.85rem;}
 .fcredit span{color:var(--cyan);}
 
-@media(max-width:900px){nav{padding:16px 28px;}.hamburger{display:block;}.nav-links{position:fixed;top:68px;left:-100%;width:75%;max-width:280px;height:calc(100vh - 68px);background:rgba(3,9,18,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:flex-start;gap:30px;padding:44px 20px;transition:left .3s;border-right:1px solid var(--border);z-index:999;}.nav-links.open{left:0;}.container{padding:0 28px;}.prod-grid{grid-template-columns:repeat(2,1fr)}.stock-cards{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
-@media(max-width:640px){.prod-grid{grid-template-columns:1fr;}.stock-cards{grid-template-columns:1fr 1fr;}.cta-box{padding:44px 24px;}.cta-h{font-size:1.8rem;}.footer-grid{grid-template-columns:1fr;gap:28px;}footer{padding:50px 22px 32px;}.footer-bottom{flex-direction:column;text-align:center;}.container{padding:0 20px;}}
+@media(max-width:900px){nav{padding:16px 28px;}.hamburger{display:block;}.nav-links{position:fixed;top:68px;left:-100%;width:75%;max-width:280px;height:calc(100vh - 68px);background:rgba(3,9,18,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:flex-start;gap:30px;padding:44px 20px;transition:left .3s;border-right:1px solid var(--border);z-index:999;}.nav-links.open{left:0;}.container{padding:0 28px;}.contact-main{grid-template-columns:1fr;}.info-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;gap:28px;}footer{padding:50px 22px 32px;}.footer-bottom{flex-direction:column;text-align:center;}.container{padding:0 20px;}}
 </style>
 </head>
 <body>
@@ -152,119 +140,86 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="nav-links" id="navLinks">
     <a href="../index.html">Home</a>
     <a href="../services/index.html">Services</a>
-    <a href="index.html" class="active">Products</a>
-    <a href="../contact/index.html">Contact</a>
+    <a href="../products/index.html">Products</a>
+    <a href="index.html" class="active">Contact</a>
     <a href="tel:+917300042588" class="btn btn-primary" style="padding:10px 22px;font-size:.85rem;"><i class="fas fa-phone-alt"></i>Call Now</a>
   </div>
 </nav>
 
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-tag rv">What We Stock</div>
-    <h1 class="rv">Our <em>Products</em></h1>
-    <p class="rv" style="transition-delay:.1s">Everything from purified water bottles to your favourite cold drinks — always fresh, always in stock.</p>
+    <div class="page-hero-tag rv">Get In Touch</div>
+    <h1 class="rv">Contact <em>Us</em></h1>
+    <p class="rv" style="transition-delay:.1s">We're available 24/7. Call or WhatsApp us right now for instant order confirmation and same-day dispatch.</p>
   </div>
 </section>
 
-<!-- STOCK NUMBERS -->
-<section class="stock-sec" style="padding-top:0;">
+<!-- CONTACT CARDS -->
+<section style="padding-top:0;">
   <div class="container">
-    <div class="stock-cards">
-      <div class="stock-card rv"><span class="stock-val">1L+</span><div class="stock-lab">Water Bottles in Warehouse</div></div>
-      <div class="stock-card rv" style="transition-delay:.1s"><span class="stock-val">3,000+</span><div class="stock-lab">Bulk Jars Ready to Ship</div></div>
-      <div class="stock-card rv" style="transition-delay:.2s"><span class="stock-val">10+</span><div class="stock-lab">Cold Drink Brands Stocked</div></div>
-      <div class="stock-card rv" style="transition-delay:.3s"><span class="stock-val">4</span><div class="stock-lab">Bottle Sizes Available</div></div>
+    <div class="contact-main">
+      <div class="contact-card rv">
+        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+        <div class="contact-card-title">Call Us Directly</div>
+        <div class="contact-card-sub">Available 24/7 for instant order placement and queries. Pick up within seconds.</div>
+        <div class="contact-nums">
+          <a href="tel:+917300042588" class="cnum"><i class="fas fa-phone"></i>+91 7300042588</a>
+          <a href="tel:+919785250790" class="cnum"><i class="fas fa-phone"></i>+91 9785250790</a>
+        </div>
+      </div>
+      <div class="wa-card rv" style="transition-delay:.15s">
+        <div class="wa-icon"><i class="fab fa-whatsapp"></i></div>
+        <div class="wa-title">WhatsApp Us</div>
+        <div class="wa-sub">Send your order details on WhatsApp for quick confirmation. We reply instantly.</div>
+        <a href="https://wa.me/917300042588?text=Hi%20Water%20and%20Cold%20Drink%2C%20I%20need%20supply%20of%20products." target="_blank" class="wa-btn-big"><i class="fab fa-whatsapp"></i>Message on WhatsApp</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section>
-  <div class="container">
-    <div class="stag rv">Products</div>
-    <h2 class="sh rv">All Products <em>In Stock</em></h2>
-    <div class="prod-grid">
-      <div class="prod-card rv">
-        <div class="prod-img">
-          <span class="prod-badge">Best Seller ⭐</span>
-          <img src="../img3.png" alt="Packaged water bottles">
-        </div>
-        <div class="prod-body">
-          <div class="prod-title">Packaged Drinking Water</div>
-          <div class="prod-desc">Pure, hygienically sealed drinking water. ISI certified, chilled on delivery.</div>
-          <div class="prod-sizes"><span class="psize">200ml</span><span class="psize">500ml</span><span class="psize">1L</span><span class="psize">2L</span></div>
-          <a href="../contact/index.html" class="prod-cta">Order Now <i class="fas fa-arrow-right"></i></a>
-        </div>
+    <!-- INFO CARDS -->
+    <div class="info-grid">
+      <div class="info-card rv">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="info-title">Our Location</div>
+        <div class="info-text">Based in Sikar, Rajasthan — serving all areas of Sikar city and nearby regions including Fatehpur, Ringas & Neem Ka Thana.</div>
       </div>
-      <div class="prod-card rv" style="transition-delay:.12s">
-        <div class="prod-img">
-          <span class="prod-badge">Bulk 🏭</span>
-          <img src="../img4.png" alt="Bulk water jars">
-        </div>
-        <div class="prod-body">
-          <div class="prod-title">Bulk Water Jars</div>
-          <div class="prod-desc">Large sealed jars ideal for homes, offices, and events. Multiple capacity options available.</div>
-          <div class="prod-sizes"><span class="psize">5L</span><span class="psize">10L</span><span class="psize">20L</span></div>
-          <a href="../contact/index.html" class="prod-cta">Order Now <i class="fas fa-arrow-right"></i></a>
-        </div>
+      <div class="info-card rv" style="transition-delay:.12s">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div class="info-title">Working Hours</div>
+        <div class="info-text">We operate 24 hours a day, 7 days a week including Sundays and all public holidays. Never closed.</div>
       </div>
-      <div class="prod-card rv" style="transition-delay:.24s">
-        <div class="prod-img">
-          <span class="prod-badge">Popular 🔥</span>
-          <img src="../img5.png" alt="Cold drinks">
-        </div>
-        <div class="prod-body">
-          <div class="prod-title">Cold Drinks — All Brands</div>
-          <div class="prod-desc">Pepsi, Sprite, 7UP, Mirinda, Thums Up — in cans & PET bottles. Always ice-cold.</div>
-          <div class="prod-sizes"><span class="psize">250ml Can</span><span class="psize">500ml</span><span class="psize">1L</span><span class="psize">2L</span></div>
-          <a href="../contact/index.html" class="prod-cta">Order Now <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="prod-card rv" style="transition-delay:.36s">
-        <div class="prod-img">
-          <span class="prod-badge">Event Pack 🎉</span>
-          <img src="../img2.png" alt="Event bulk packs">
-        </div>
-        <div class="prod-body">
-          <div class="prod-title">Event Bulk Packs</div>
-          <div class="prod-desc">Custom bundled packs for weddings, corporate events, and large gatherings.</div>
-          <div class="prod-sizes"><span class="psize">Custom Qty</span><span class="psize">Mixed Pack</span></div>
-          <a href="../contact/index.html" class="prod-cta">Get Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
+      <div class="info-card rv" style="transition-delay:.24s">
+        <div class="info-icon"><i class="fas fa-truck-fast"></i></div>
+        <div class="info-title">Delivery Time</div>
+        <div class="info-text">Same-day delivery across Sikar city. Orders placed before 6 PM are typically delivered within 2–4 hours.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BRANDS -->
-<section class="brands-sec">
+<!-- FAQ -->
+<section style="background:var(--night2);">
   <div class="container">
-    <div class="stag rv">Cold Drink Brands</div>
-    <h2 class="sh rv">Brands We <em>Distribute</em></h2>
-    <div class="brands-grid">
-      <div class="brand-chip rv"><div class="brand-icon">🥤</div><div class="brand-name">Pepsi</div></div>
-      <div class="brand-chip rv" style="transition-delay:.07s"><div class="brand-icon">🟢</div><div class="brand-name">Sprite</div></div>
-      <div class="brand-chip rv" style="transition-delay:.14s"><div class="brand-icon">🔴</div><div class="brand-name">Coca-Cola</div></div>
-      <div class="brand-chip rv" style="transition-delay:.21s"><div class="brand-icon">⚡</div><div class="brand-name">Thums Up</div></div>
-      <div class="brand-chip rv" style="transition-delay:.28s"><div class="brand-icon">🍋</div><div class="brand-name">7UP</div></div>
-      <div class="brand-chip rv" style="transition-delay:.35s"><div class="brand-icon">🟠</div><div class="brand-name">Mirinda</div></div>
-      <div class="brand-chip rv" style="transition-delay:.42s"><div class="brand-icon">💚</div><div class="brand-name">Mountain Dew</div></div>
-      <div class="brand-chip rv" style="transition-delay:.49s"><div class="brand-icon">💧</div><div class="brand-name">Kinley Water</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-sec">
-  <div class="container">
-    <div class="cta-box rv">
-      <div class="stag" style="justify-content:center;margin-bottom:18px;">Order Today</div>
-      <div class="cta-h">Ready to Order?<br>We Ship Today!</div>
-      <p class="cta-sub">Call or WhatsApp for instant stock confirmation and same-day dispatch anywhere in Sikar.</p>
-      <div class="cta-btns">
-        <a href="tel:+917300042588" class="cphone"><i class="fas fa-phone-alt"></i>+91 7300042588</a>
-        <a href="tel:+919785250790" class="cphone"><i class="fas fa-phone-alt"></i>+91 9785250790</a>
-        <a href="https://wa.me/917300042588?text=Hi%20I%20want%20to%20order" target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i>WhatsApp Order</a>
+    <div class="stag rv">FAQ</div>
+    <h2 class="sh rv">Common <em>Questions</em></h2>
+    <div class="faq-list">
+      <div class="faq-item rv">
+        <div class="faq-q"><span class="faq-q-text">What is the minimum order quantity?</span><i class="fas fa-chevron-down faq-arrow"></i></div>
+        <div class="faq-a">There is no strict minimum — we serve small and large orders alike. However, bulk orders of 50+ units receive special wholesale pricing. Contact us to discuss your needs.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><span class="faq-q-text">How fast is the delivery?</span><i class="fas fa-chevron-down faq-arrow"></i></div>
+        <div class="faq-a">Most orders in Sikar city are delivered the same day, usually within 2–4 hours. For bulk orders, we may need a few hours extra. We always confirm the delivery time when you place the order.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><span class="faq-q-text">Do you deliver outside Sikar city?</span><i class="fas fa-chevron-down faq-arrow"></i></div>
+        <div class="faq-a">Yes, we deliver to Fatehpur, Ringas, Neem Ka Thana, Losal, and surrounding villages. Please call us to confirm delivery availability for your specific location.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><span class="faq-q-text">What payment methods do you accept?</span><i class="fas fa-chevron-down faq-arrow"></i></div>
+        <div class="faq-a">We accept cash on delivery, UPI (GPay, PhonePe, Paytm), and bank transfers. For bulk orders, we can also arrange credit terms. Contact us to discuss.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><span class="faq-q-text">Can you supply for weddings and large events?</span><i class="fas fa-chevron-down faq-arrow"></i></div>
+        <div class="faq-a">Absolutely! We specialize in event supply. We've handled weddings, corporate events, and large gatherings across Sikar. Call us in advance and we'll arrange everything perfectly.</div>
       </div>
     </div>
   </div>
@@ -276,7 +231,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <div class="flogo"><div class="logo-drop" style="width:30px;height:30px;"><span style="font-size:.8rem;">💧</span></div>Water & Cold Drink</div>
       <p class="ftagline">Sikar's most trusted water & cold drink distributor since 2014. Premium quality, 24/7 supply.</p>
     </div>
-    <div><div class="fcol-title">Quick Links</div><div class="flinks"><a href="../index.html">Home</a><a href="../services/index.html">Services</a><a href="index.html">Products</a><a href="../contact/index.html">Contact</a></div></div>
+    <div><div class="fcol-title">Quick Links</div><div class="flinks"><a href="../index.html">Home</a><a href="../services/index.html">Services</a><a href="../products/index.html">Products</a><a href="index.html">Contact</a></div></div>
     <div><div class="fcol-title">Location</div><div class="flinks"><a href="#"><i class="fas fa-map-marker-alt"></i>Sikar, Rajasthan</a><a href="#"><i class="fas fa-clock"></i>24/7 Operations</a><a href="#"><i class="fas fa-truck"></i>Citywide Delivery</a></div></div>
     <div><div class="fcol-title">Contact</div><div class="flinks"><a href="tel:+917300042588"><i class="fas fa-phone"></i>+91 7300042588</a><a href="tel:+919785250790"><i class="fas fa-phone"></i>+91 9785250790</a><a href="https://wa.me/917300042588" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366;"></i>WhatsApp</a></div></div>
   </div>
@@ -297,6 +252,8 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 const obs=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(3,9,18,.97)':'rgba(3,9,18,.9)';});
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');});});
 </script>
 </body>
 </html>
